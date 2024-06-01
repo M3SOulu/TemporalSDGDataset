@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JSON Static Service Dependency Graph Schema",
+  "type": "object",
+  "properties": {
+    "graph": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "directed": {
+          "type": [
+            "boolean"
+          ],
+          "default": true
+        },
+        "multigraph": {
+          "type": [
+            "boolean"
+          ],
+          "default": false
+        },
+        "nodes": {
+          "type": "array",
+          "description": "List of nodes in the graph",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "edges": {
+          "type": "array",
+          "description": "List of edges from 'source' to 'target' in the graph",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "endpoint": {
+                "type": "string"
+              },
+              "weight": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "source",
+              "target"
+            ]
+          }
+        }
+      },
+      "required": ["nodes", "edges"]
+    }
+  },
+  "required": [
+    "graph"
+  ]
+}
