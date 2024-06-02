@@ -9,7 +9,7 @@ Here we describe the two schemas and how to validate them.
 
 ### Static SDG schema
 
-This schema represents an SDG of a particular version of a project (i.e., a static graph)
+This [schema](json-static-sdg-schema.json) represents an SDG of a particular version of a project (i.e., a static graph)
 
 The schema is
 - `graph`: root object representing the graph
@@ -24,11 +24,12 @@ The schema is
         - `weight`: number (optional, >=0), the weight associated with the connection (e.g., the amount of connections)
        
 Schema does not restrict additional properties.
+
 Example data is provided in [example-static-sdg-json](example-static-sdg.json)
        
 ### Temporal SDG schema
 
-This schema extends the Static SDG schema to represent a temporal SDG for several timestamps
+This [schema](json-temporal-sdg-schema.json) extends the Static SDG schema to represent a temporal SDG for several timestamps
 (e.g. different versions of the project or snapshots of project at different moments at runtime)
 
 The schema is
@@ -46,7 +47,8 @@ The schema is
         - `weight`: number (optional, >=0), the weight associated with the connection (e.g., the amount of connections)
 
 Schema does not restrict additional properties.
-Example data is provided in [example-tempora-sdg.json](example-temporal-sdg.json)
+
+Example data is provided in [example-temporal-sdg.json](example-temporal-sdg.json)
 
 ### Validation of schemas
 
