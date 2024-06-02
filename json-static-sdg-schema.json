@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/M3SOulu/JSON_SDG_schema/blob/main/json-static-sdg-schema.json",
   "title": "JSON Static Service Dependency Graph Schema",
   "type": "object",
   "properties": {
