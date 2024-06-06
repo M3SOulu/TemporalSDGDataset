@@ -13,15 +13,17 @@ This [schema](json-static-sdg-schema.json) represents an SDG of a particular ver
 
 The schema is
 - `graph`: root object representing the graph
-    - `label`: string, the name of the graph
-    - `directed`: boolean, whether the edges are interpreted as directed (default true)
-    - `multigraph`: boolen, whether several edges between source and target are allowed, distinguished by the endpoint,
+    - `label`: string (optional), the name of the graph
+    - `directed`: boolean (optional), whether the edges are interpreted as directed (default true)
+    - `multigraph`: boolean (optional), whether several edges between source and target are allowed, distinguished by the endpoint,
+    - `timestamp`: string (optional), a timestamp associated with the graph
     - `nodes`: array[string], list of all nodes present in the data (must be unique)
     - `edges`: array[object], list of edge object containing the following:
         - `source`: string, the source node (expected to be one of nodes defined in `nodes`)
         - `target`: string, the target node (expected to be one of nodes defined in `nodes`)
         - `endpoint`: string (optional), the endpoint of `target` that is accessed (if used, `multigraph` must be `true`)
         - `weight`: number (optional, >=0), the weight associated with the connection (e.g., the amount of connections)
+- Root object can also be `graphs`, an array of `graph` objects
        
 Schema does not restrict additional properties.
 
